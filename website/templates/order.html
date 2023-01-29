@@ -1,0 +1,48 @@
+{% extends "base.html" %} {% block tite %}Order{% endblock %}
+
+{% block stuff %}
+<form method="post">
+    <h3 align= "center">Order</h3>
+    <div class= "form-group">
+        <label for="meat">Meat Options</label>
+        <select class="form-control" id="meat" name="meat">
+            <option value="0">NONE ($0 per 10)</option>
+            <option value="1">Pulled Pork ($80 per 10)</option>
+            <option value="2">Pulled Chicken ($90 per 10)</option>
+            <option value="3">Pulled Cow ($100 per 10)</option>
+            <option value="4">Pulled Fish ($200 per 10)</option>
+        </select>
+    </div>
+    <div class= "form-group">
+        <label for="sides">Side Options</label>
+        <select class="form-control" id="sides" name="sides">
+            <option value="0">NONE ($0 per 10)</option>
+            <option value="10">Pulled Buns ($10 per 10)</option>
+            <option value="20">Pulled Corn Bun ($30 per 10)</option>
+            <option value="30">Pulled potatos ($40 per 10)</option>
+            <option value="40">Pulled tacos ($70 per 10)</option>
+        </select>
+    </div>
+    <div class= "form-group">
+        <label for="drinks">Drink Options</label>
+        <select class="form-control" id="drinks" name="drinks">
+            <option value="0">NONE</option>
+            <option value="100">Lemon ($10 per 10)</option>
+            <option value="200">Lime ($40 per 10)</option>
+            <option value="300">Pop ($70 per 10)</option>
+            <option value="400">Soda ($50 per 10)</option>
+        </select>
+    </div>
+    <div class= "form-group">
+        <label for="people">People Options</label>
+        <select class="form-control" id="people" name="people">
+            <option value="1000">10-20</option>
+            <option value="2000">20-30</option>
+            <option value="3000">30-40</option>
+            <option value="4000">40-50</option>
+        </select>
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{% endblock %}

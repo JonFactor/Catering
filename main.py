@@ -1,8 +1,8 @@
 # import function from other program
-from website import createApp 
+from website import create_app 
 
 # app is the function from __init__.py
-app = createApp() 
+app = create_app() 
 
 # make sure that the app is only ran with this file
 if __name__ == '__main__': 

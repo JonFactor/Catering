@@ -1,13 +1,11 @@
-# imports
-from flask import Blueprint, render_template
-
-# define this file is a blueprint
+# store routes
+### imports
+from flask import Blueprint, render_template # organize files
+from flask_login import current_user, login_required, login_user, logout_user
+### code
 views = Blueprint('views', __name__)
 
-# url
 @views.route('/')
-
-# function will run when url called
+@login_required
 def home():
-    return render_template("home.html") # html code
-
+    return render_template('Home.html', user = current_user)

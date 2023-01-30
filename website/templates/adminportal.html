@@ -1,0 +1,45 @@
+{% extends "base.html" %} {% block tite %}ADMIN{% endblock %}
+
+{% block stuff %}
+<style>
+    table, th, td {
+      border:1px solid black;
+    }
+</style>
+<h3 align= "center">Admin</h3>
+<table style="width:80%; float: left;">
+    <th>
+        <tr style="color:black;">
+            <th>id</th>
+            <th>ordernumber</th>
+            <th>date</th>
+            <th>userid</th>
+        </tr>
+    </th>
+    {%for order in query%}
+    <tr>
+        <td>
+            {{ order.id }}
+        </td>
+        <td>
+            {{ order.ordernum }}
+        </td>
+        <td>
+            {{ order.date }}
+
+        <td>
+            {{ order.userId }}
+        </td>
+    </tr>        
+    {%endfor%}
+</table>
+
+<form method="post">
+    <div class= "form-group">
+        <label for="delete"></label>
+        <input type="input" class="form-control" id="delete" name="delete" placeholder="delete"/>
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary">confirm</button>
+</form>
+{% endblock %}

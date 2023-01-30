@@ -7,7 +7,7 @@ from flask_login import login_user, logout_user, login_required, current_user
 auth = Blueprint('auth', __name__)
 
 @auth.route('/signin', methods=['GET', 'POST'])
-def login():
+def signin():
     if request.method == 'POST':
         form = request.form
         email = form.get('email')
@@ -29,7 +29,7 @@ def login():
 @login_required
 def logout():
     logout_user()
-    return redirect(url_for('auth.login'))
+    return redirect(url_for('auth.signin'))
 
 @auth.route('/signup', methods=['GET', 'POST'])
 def signup():

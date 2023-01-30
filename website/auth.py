@@ -58,7 +58,7 @@ def signup():
             db.session.add(new_user)
             db.session.commit()
             flash('Sign up successful', category='success')
-            return redirect(url_for('auth.signin'))
+            redirect(url_for('auth.signin'))
     return render_template('signup.html', user = current_user)
 
 @auth.route('/order', methods=['GET', 'POST'])
